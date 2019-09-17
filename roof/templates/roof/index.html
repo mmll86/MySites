@@ -1,0 +1,14 @@
+{% extends 'roof/base.html' %}
+{% block title %}Index HTML{% endblock %}
+{% block content %}
+    {% for hot in kitchen_hot %}
+    <h1>{{ hot.title_hot }}</h1>
+        <p>{{ hot.text_hot }}</p>
+        <image src="{{ hot.image_hot.url }}"></image>
+        <br>
+        <p>вес: {{ hot.weight_hot }}</p>
+        <h3>{{ hot.price_hot }} рублей</h3>
+
+    {% endfor %}
+
+{% endblock %}
