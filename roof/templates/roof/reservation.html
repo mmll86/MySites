@@ -3,13 +3,6 @@
 {% block content %}
     <form action="{% url 'reservation_url' %}" method="POST">
         {% csrf_token %}
-        <input type="text"  required placeholder="Имя" name="first_name" id="">
-        <input type="text"  required placeholder="Фамилия" name="last_name" id="">
-        <input type="text"  required placeholder="Номер телефона" name="number_phone" id="">
-        <input type="text"  required placeholder="E-email" name="email" id="">
-        <input type="date"  required placeholder="Дата бронирования" name="date_reservation" id="">
-        <input type="time"  required placeholder="Время бронирования" name="time_reservation" id="">
-        <input type="text"  required placeholder="Количество персон" name="number_persone" id="">
         <button type="submit">Отправить</button>
     </form>
 {% endblock %}

@@ -1,6 +1,5 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-from django import forms
 
 # Create your models here.
 # 1) Menu Hot:
@@ -27,14 +26,14 @@ class MenuKitchenHot(models.Model):
 
 # 2) Бронирование
 
-class Reservation(forms.Form):
-	first_name = forms.CharField('Имя', max_length=20)
-	last_name = forms.CharField('Фамилия',max_length=20)
-	number_phone = forms.CharField('Номер телефона', max_length=12)
-	email = forms.CharField('E-email', max_length=20)
-	date_reservation = forms.DateField('Дата бронирования')
-	time_reservation = forms.TimeField('Время бронирования')
-	number_persone = forms.IntegerField('Количество персон')
+class Reservation(models.Model):
+	first_name = models.CharField('Имя', max_length=20)
+	last_name = models.CharField('Фамилия',max_length=20)
+	number_phone = models.CharField('Номер телефона', max_length=12)
+	email = models.CharField('E-email', max_length=20)
+	date_reservation = models.DateField('Дата бронирования')
+	time_reservation = models.TimeField('Время бронирования')
+	number_persone = models.IntegerField('Количество персон')
 
 	class Meta:
 		verbose_name = 'Персона'
