@@ -7,3 +7,8 @@ class MenuAdminHot(admin.ModelAdmin):
 	prepopulated_fields = {"slug_hot": ("title_hot",)}
 
 admin.site.register(MenuKitchenHot, MenuAdminHot)
+
+class ReservationAdm(admin.ModelAdmin):
+	list_display = ('first_name', 'last_name', 'number_phone', 'number_persone', 'date_reservation', 'time_reservation')
+
+admin.site.register(Reservation, ReservationAdm)
