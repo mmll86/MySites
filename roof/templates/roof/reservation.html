@@ -3,6 +3,13 @@
 {% block content %}
     <form action="{% url 'reservation_url' %}" method="POST">
         {% csrf_token %}
+        {{ form.first_name }}
+        {{ last_name }}
+        {{ number_phone }}
+        {{ email }}
+        {{ date_reservation }}
+        {{ time_reservation }}
+        {{ number_persone }}
         <button type="submit">Отправить</button>
     </form>
 {% endblock %}

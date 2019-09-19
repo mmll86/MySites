@@ -5,5 +5,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
 	path('', index, name='index_url'),
-	# path('reservation/', reservation, name='reservation_url'),
+	path('reservation/', ReservationCreate.as_view(), name='reservation_url'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
