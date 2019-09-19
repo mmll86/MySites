@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .models import *
 from django.db.models import Q
 from .forms import ReservationForm
@@ -18,12 +19,9 @@ class ReservationCreate(View):
 		return render(request, 'roof/reservation.html', context={'form': form})
 
 	def post(self, request):
-		bound_form = ReservationForm(request.POST)
+		form = ReservationForm(request.POST)
 
-		if bound_form.is_valid():
-			new_reservation = bound_form.save()
-
-			return redirect(new_reservation)
-
+		form.save()
+			
 		return render(request, 'roof/reservation.html', context={'form': bound_form})
 
